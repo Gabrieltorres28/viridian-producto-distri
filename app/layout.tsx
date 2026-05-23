@@ -13,26 +13,35 @@ const _geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Viridian Core | Sistema de Gestión para Distribuidoras',
-  description: 'Controlá stock, deuda, clientes, caja y repartos desde un único sistema. El software de gestión que tu distribuidora necesita para dejar de perder dinero.',
-  keywords: ['distribuidora', 'gestión', 'stock', 'inventario', 'deuda', 'caja', 'repartos', 'pyme', 'software'],
-  generator: 'v0.app',
+  title: "Viridian Core | Software de gestion para distribuidoras",
+  description: "Gestiona stock, clientes, caja, deuda y repartos desde una plataforma pensada para distribuidoras.",
+  keywords: ["Viridian Core", "software para distribuidoras", "gestion de stock", "inventario", "deuda", "caja", "repartos", "pyme"],
+  applicationName: "Viridian Core",
+  authors: [{ name: "Viridian Core" }],
+  creator: "Viridian Core",
+  publisher: "Viridian Core",
+  openGraph: {
+    title: "Viridian Core | Software de gestion para distribuidoras",
+    description: "Stock, clientes, caja, deuda y repartos en una plataforma pensada para distribuidoras.",
+    siteName: "Viridian Core",
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Viridian Core | Software de gestion para distribuidoras",
+    description: "Stock, clientes, caja, deuda y repartos en una plataforma pensada para distribuidoras.",
+  },
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: "/images/apple-icon.png",
+        sizes: "180x180",
+        type: "image/png",
       },
     ],
-    apple: '/apple-icon.png',
+    shortcut: "/images/apple-icon.png",
+    apple: "/images/apple-icon.png",
   },
 }
 

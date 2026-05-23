@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -34,13 +35,17 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-36 items-center justify-between lg:h-44">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <span className="text-sm font-bold text-primary-foreground">V</span>
-            </div>
-            <span className="text-lg font-semibold text-foreground">Viridian Core</span>
+            <Image
+              src="/images/logo-oficial-header.png"
+              alt="Viridian Core"
+              width={1536}
+              height={1024}
+              priority
+              className="h-32 w-auto object-contain sm:h-36 lg:h-40"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -58,11 +63,10 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden items-center gap-3 md:flex">
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-              Ver demo
-            </Button>
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Solicitar demo
+            <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <a href="https://wa.me/5493751471708" target="_blank" rel="noreferrer">
+                Solicitar demo
+              </a>
             </Button>
           </div>
 
@@ -97,11 +101,10 @@ export function Header() {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-4">
-                <Button variant="outline" size="sm" className="w-full">
-                  Ver demo
-                </Button>
-                <Button size="sm" className="w-full bg-primary text-primary-foreground">
-                  Solicitar demo
+                <Button asChild size="sm" className="w-full bg-primary text-primary-foreground">
+                  <a href="https://wa.me/5493751471708" target="_blank" rel="noreferrer">
+                    Solicitar demo
+                  </a>
                 </Button>
               </div>
             </div>

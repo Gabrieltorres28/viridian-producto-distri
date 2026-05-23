@@ -42,20 +42,15 @@ export function CTASection() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
+                asChild
                 size="lg"
                 className="group h-14 gap-3 bg-primary px-8 text-base text-primary-foreground hover:bg-primary/90"
               >
-                <MessageCircle className="h-5 w-5" />
-                Hablar por WhatsApp
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                className="h-14 border-border px-8 text-base text-foreground hover:bg-secondary"
-              >
-                Solicitar demo
+                <a href="https://wa.me/5493751471708" target="_blank" rel="noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Hablar por WhatsApp
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </div>
 

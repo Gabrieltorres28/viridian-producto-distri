@@ -1,13 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DashboardMockup } from "./dashboard-mockup"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-16">
+    <section className="relative min-h-screen overflow-hidden pt-36 lg:pt-44">
       {/* Background Effects */}
       <div className="absolute inset-0 radial-overlay" />
       <div className="absolute inset-0 grid-pattern opacity-30" />
@@ -17,7 +17,7 @@ export function HeroSection() {
       <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-primary/5 blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid min-h-[calc(100vh-4rem)] items-center gap-12 py-12 lg:grid-cols-2 lg:gap-8">
+        <div className="grid min-h-[calc(100vh-9rem)] lg:min-h-[calc(100vh-11rem)] items-center gap-12 py-12 lg:grid-cols-2 lg:gap-8">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -62,20 +62,15 @@ export function HeroSection() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
             >
-              <Button 
-                size="lg" 
+              <Button
+                asChild
+                size="lg"
                 className="group bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                Solicitar demo
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-border text-foreground hover:bg-secondary"
-              >
-                <Play className="mr-2 h-4 w-4" />
-                Ver sistema funcionando
+                <a href="https://wa.me/5493751471708" target="_blank" rel="noreferrer">
+                  Solicitar demo
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </motion.div>
 

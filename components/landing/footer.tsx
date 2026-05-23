@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-secondary/20">
@@ -5,10 +7,13 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <span className="text-sm font-bold text-primary-foreground">V</span>
-            </div>
-            <span className="text-lg font-semibold text-foreground">Viridian Core</span>
+            <Image
+              src="/images/logo-oficial-header.png"
+              alt="Viridian Core"
+              width={1536}
+              height={1024}
+              className="h-32 w-auto object-contain sm:h-36"
+            />
           </div>
 
           {/* Links */}

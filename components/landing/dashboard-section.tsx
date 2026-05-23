@@ -111,7 +111,7 @@ export function DashboardSection() {
                 {metrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="rounded-xl border border-border/30 bg-card/30 p-4"
+                    className="min-w-0 overflow-hidden rounded-xl border border-border/30 bg-card/30 p-4"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
@@ -134,7 +134,7 @@ export function DashboardSection() {
                         {metric.change}
                       </div>
                     </div>
-                    <div className="mt-3 text-2xl font-semibold text-foreground">
+                    <div className="mt-3 truncate whitespace-nowrap text-[clamp(1.15rem,4vw,1.5rem)] font-semibold leading-tight text-foreground">
                       {metric.value}
                     </div>
                     <div className="mt-1 text-sm text-muted-foreground">

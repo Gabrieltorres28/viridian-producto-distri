@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { 
   TrendingUp, 
@@ -57,11 +58,14 @@ export function DashboardMockup() {
         <div className="flex">
           {/* Sidebar */}
           <div className="hidden w-48 border-r border-border/30 bg-background/20 p-3 lg:block">
-            <div className="mb-4 flex items-center gap-2 px-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
-                <span className="text-xs font-bold text-primary-foreground">V</span>
-              </div>
-              <span className="text-sm font-medium text-foreground">Viridian</span>
+            <div className="mb-5 px-1">
+              <Image
+                src="/images/logo-oficial-header.png"
+                alt="Viridian Core"
+                width={1536}
+                height={1024}
+                className="h-16 w-auto object-contain"
+              />
             </div>
             
             <nav className="space-y-1">
@@ -96,7 +100,7 @@ export function DashboardMockup() {
                 <h2 className="text-base font-semibold text-foreground">Dashboard</h2>
                 <p className="text-xs text-muted-foreground">Distribuidora San Martín</p>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex min-w-0 items-center gap-2">
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-secondary">
                   <Search className="h-3.5 w-3.5 text-muted-foreground" />
                 </div>
@@ -117,7 +121,7 @@ export function DashboardMockup() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-lg border border-border/30 bg-secondary/20 p-2.5"
+                  className="min-w-0 overflow-hidden rounded-lg border border-border/30 bg-secondary/20 p-2.5"
                 >
                   <div className="flex items-center justify-between">
                     <stat.icon className="h-3.5 w-3.5 text-muted-foreground" />
@@ -125,8 +129,8 @@ export function DashboardMockup() {
                       {stat.change}
                     </span>
                   </div>
-                  <div className="mt-1.5 text-lg font-semibold text-foreground">{stat.value}</div>
-                  <div className="text-[10px] text-muted-foreground">{stat.label}</div>
+                  <div className="mt-1.5 truncate whitespace-nowrap text-[clamp(0.85rem,1.7vw,1.125rem)] font-semibold leading-tight text-foreground">{stat.value}</div>
+                  <div className="truncate text-[10px] text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -136,21 +140,21 @@ export function DashboardMockup() {
               {/* Clients with Debt */}
               <div className="rounded-lg border border-border/30 bg-secondary/20 p-3">
                 <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xs font-medium text-foreground">Clientes con deuda</h3>
+                  <h3 className="shrink-0 whitespace-nowrap text-xs font-medium text-foreground">Clientes con deuda</h3>
                   <MoreHorizontal className="h-3.5 w-3.5 text-muted-foreground" />
                 </div>
                 <div className="space-y-2">
                   {clients.map((client) => (
                     <div
                       key={client.name}
-                      className="flex items-center justify-between rounded-md bg-background/30 px-2 py-1.5"
+                      className="flex min-w-0 items-center justify-between gap-2 rounded-md bg-background/30 px-2 py-1.5"
                     >
-                      <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-[10px] font-medium text-foreground">
+                      <div className="flex min-w-0 items-center gap-2">
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-[10px] font-medium text-foreground">
                           {client.name.charAt(0)}
                         </div>
-                        <div>
-                          <div className="text-xs text-foreground">{client.name}</div>
+                        <div className="min-w-0">
+                          <div className="truncate text-xs text-foreground">{client.name}</div>
                           <div className={`text-[10px] ${
                             client.status === "atrasado" 
                               ? "text-red-400" 
@@ -162,7 +166,7 @@ export function DashboardMockup() {
                           </div>
                         </div>
                       </div>
-                      <div className="text-xs font-medium text-foreground">
+                      <div className="shrink-0 whitespace-nowrap text-xs font-medium text-foreground">
                         ${client.debt.toLocaleString()}
                       </div>
                     </div>
@@ -173,16 +177,16 @@ export function DashboardMockup() {
               {/* Recent Movements */}
               <div className="rounded-lg border border-border/30 bg-secondary/20 p-3">
                 <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xs font-medium text-foreground">Movimientos recientes</h3>
+                  <h3 className="shrink-0 whitespace-nowrap text-xs font-medium text-foreground">Movimientos recientes</h3>
                   <MoreHorizontal className="h-3.5 w-3.5 text-muted-foreground" />
                 </div>
                 <div className="space-y-2">
                   {recentMovements.map((movement, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-between rounded-md bg-background/30 px-2 py-1.5"
+                      className="flex min-w-0 items-center justify-between gap-2 rounded-md bg-background/30 px-2 py-1.5"
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex min-w-0 items-center gap-2">
                         <div className={`flex h-6 w-6 items-center justify-center rounded-full ${
                           movement.type === "venta" 
                             ? "bg-primary/20" 
@@ -198,12 +202,12 @@ export function DashboardMockup() {
                             <TrendingDown className="h-3 w-3 text-red-400" />
                           )}
                         </div>
-                        <div>
-                          <div className="text-xs text-foreground">{movement.description}</div>
-                          <div className="text-[10px] text-muted-foreground">{movement.time}</div>
+                        <div className="min-w-0">
+                          <div className="truncate text-xs text-foreground">{movement.description}</div>
+                          <div className="truncate text-[10px] text-muted-foreground">{movement.time}</div>
                         </div>
                       </div>
-                      <div className={`text-xs font-medium ${
+                      <div className={`shrink-0 whitespace-nowrap text-xs font-medium ${
                         movement.amount > 0 ? "text-primary" : "text-red-400"
                       }`}>
                         {movement.amount > 0 ? "+" : ""}${Math.abs(movement.amount).toLocaleString()}
@@ -216,8 +220,8 @@ export function DashboardMockup() {
 
             {/* Stock Alert */}
             <div className="mt-3 flex items-center justify-between rounded-lg border border-primary/30 bg-primary/5 px-3 py-2">
-              <div className="flex items-center gap-2">
-                <Package className="h-4 w-4 text-primary" />
+              <div className="flex min-w-0 items-center gap-2">
+                <Package className="h-4 w-4 shrink-0 text-primary" />
                 <span className="text-xs text-foreground">
                   <span className="font-medium">5 productos</span> con stock crítico
                 </span>
